@@ -4,8 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "json-server --routes ./config/routes.json --watch ./src/drones.json start:data",
-        "start:data": "json-server --watch ./src/data.json --port 4000"
+        "start": "json-server --routes ./config/routes.json --watch ./src/db.js"
     },
     "keywords": [],
     "author": "",
