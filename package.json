@@ -3,11 +3,11 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "run-p start:dev start:mock-server cy:run",
+        "start": "run-p start:dev start:mock-server",
         "start:dev": "rimraf dist && parcel ./src/index.html",
         "start:mock-server": "cd ./server && npm start",
         "postinstall": "cd ./server && npm i",
-        "cy:run": "cypress open"
+        "cy:run": "run-p start:dev start:mock-server cypress open"
     },
     "keywords": [],
     "author": "",
