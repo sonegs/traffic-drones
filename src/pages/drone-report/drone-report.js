@@ -18,12 +18,11 @@ let reports = {
 
 // Var Declarations
 const params = history.getParams(); // get the data of the drone with history object
-const isId = Boolean(params.id); // check if the history has an id
+const isId = Boolean(params.id); // check if history function give us an id
 
 // Counters to give value to the CSS Class 
 let rowCounter = 0;
 let rowGridCounter = 2;
-
 
 if (isId) { // Check errors with isId. If there is an id, continue. If not, go back to the Drone List
     Promise.all([ // Get the promise data
