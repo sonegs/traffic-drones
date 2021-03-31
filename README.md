@@ -15,3 +15,11 @@ per drone (name, battery level, age, image)
 traffic conditions)
 The default home page will be the drone list from where you can navigate and check the
 generated reports based on the drone you want to inspect.
+
+To run it:
+
+1. Clone the repository in a local dir.
+2. Open the console commands (CMD in Windows, Terminal in OSX) and go to the project directory cloned.
+3. Execute 'npm install'.
+4. When the npm install will be done, execute npm start.
+5. If you want to execute the tests, you have yo execute npm run cy
