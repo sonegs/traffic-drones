@@ -18,8 +18,8 @@ generated reports based on the drone you want to inspect.
 
 To run it:
 
-1. Clone the repository in a local dir.
-2. Open the console commands (CMD in Windows, Terminal in OSX) and go to the project directory cloned.
-3. Execute 'npm install'.
-4. When the npm install will be done, execute npm start.
-5. If you want to execute the tests, you have yo execute npm run cy
+1. Clone the repository to a local dir.
+2. Open the commands console (CMD in Windows, Terminal in OSX) and go to the project directory cloned.
+3. Run 'npm install'.
+4. When the npm install will be done, run 'npm start'.
+5. If you want to run the tests, you have yo run the script 'npm run cy'.
