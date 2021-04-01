@@ -4,7 +4,7 @@ import Axios from 'axios';
 const droneReportsUrl = `${process.env.BASE_API_URL}/reports`;
 
 // Exports the URL and get the data
-export const getDronesReports = () =>
-    Axios.get(droneReportsUrl).then(response => {
+export const getDronesReports = id =>
+    Axios.get(`${droneReportsUrl}?drone_id=${id}`).then(response => {
         return response.data;
     });

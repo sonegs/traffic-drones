@@ -1,5 +1,5 @@
 import { getDronesReports } from './drone-report.api';
-import { getDroneList } from '../drone-list/drone-list.api';
+import { getDrone } from '../drone-list/drone-list.api';
 import { history } from '../../core/router/history';
 import { mapDroneReportFromApiToVM } from './drone-report.mappers';
 import { setReportsValues, setDroneValues, setTitleRow } from './drone-report.components';
@@ -26,9 +26,9 @@ let rowGridCounter = 2;
 
 if (isId) { // Check errors with isId. If there is an id, continue. If not, go back to the Drone List
     Promise.all([ // Get the promise data
-        getDronesReports(), // Get the Drones Reports Data from data.json
+        getDronesReports(params.id), // Get the Drones Reports Data from data.json
     ]).then(([droneReports]) => { // When we get the data, save it in droneReports
-        getDroneList(params.id).then(droneList => { // Get the Drone List
+        getDrone(params.id).then(droneList => { // Get the Drone List
             droneList.map(myDrone => { // Map the Drone List 
                 if (params.id == myDrone.id) { // If the Drone ID if equal to the ID from the history
                     const myDroneReports = getMyDroneReports(droneReports, myDrone.id); // Get the Data of the each Report of this Drone

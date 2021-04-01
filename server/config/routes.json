@@ -1,4 +1,5 @@
 {
-    "/reports": "/reports",
-    "/drones": "/drones"
+    "/drones": "/drones",
+    "/reports/drone_id=:drone_id": "/reports/:drone-id",
+    "/drones/id=:id": "/drones/:id"
 }
