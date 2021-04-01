@@ -2,7 +2,7 @@ import Axios from 'axios';
 
 // Adds the URL Drones List with Axios
 
-const dronesUrl = `${process.env.BASE_API_URL}/drones`;
+const dronesUrl = `${process.env.BASE_API_URL}/drones/`;
 
 // Exports the JSON Server Endpoint URL and get the data
 export const getDroneList = () =>
@@ -11,6 +11,6 @@ export const getDroneList = () =>
     });
 
 export const getDrone = id =>
-    Axios.get(`${dronesUrl}?id=${id}`).then(response => {
+    Axios.get(`${dronesUrl}${id}`).then(response => {
         return response.data;
     });
