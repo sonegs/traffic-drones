@@ -1,6 +1,6 @@
 import { getDroneList } from './drone-list.api';
 import { mapDroneListFromApiToViewModel } from './drone-list.mappers';
-import { addDroneCards } from './drone-list.helpers';
+import { addDroneCards } from './drone-list.components';
 
 Promise.all([ // Get the promise data - the Drones List
     getDroneList(),

@@ -2,7 +2,7 @@ import { getDronesReports } from './drone-report.api';
 import { getDroneList } from '../drone-list/drone-list.api';
 import { history } from '../../core/router/history';
 import { mapDroneReportFromApiToVM } from './drone-report.mappers';
-import { setReportsValues, setDroneValues, setTitleRow } from './drone-report.helpers';
+import { setReportsValues, setDroneValues, setTitleRow } from './drone-report.components';
 
 // Reports Structure Declaration
 let reports = {

@@ -118,7 +118,7 @@ export const setReportsValues = (report, rowCounter, rowGridCounter) => {
     const row = document.createElement('div');
 
     // Class declarations
-    row.classList.add(`row${rowCounter}`);
+    row.classList.add(`report${rowCounter}`);
     row.classList.add('rows');
 
     // Specifics Styles
