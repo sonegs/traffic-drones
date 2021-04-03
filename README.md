@@ -20,7 +20,7 @@ To run it:
 
 1. Clone the repository to a local dir.
 2. Open the commands console (CMD in Windows, Terminal in OSX) and go to the project directory cloned.
-3. Create a .env file. You have to assign the local server port to the 'BASE_API_URL' var.
+3. Create a .env file. You have to assign the local server port to the 'BASE_API_URL' var. For example, http://localhost:5000/
 4. Run 'npm install'.
 5. When the npm install will be done, run 'npm start'.
 6. If you want to run the tests, you have yo run the script 'npm run cy'.
