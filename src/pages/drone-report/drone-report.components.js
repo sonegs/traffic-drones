@@ -1,4 +1,3 @@
-import { footer } from '../../common/components/footer';
 // Principal Var Declaration
 const gridTable = document.getElementById('drone-report');
 
@@ -100,10 +99,6 @@ export const setTitleRow = () => {
     row.appendChild(titleLongitude);
     row.appendChild(titleLatitude);
     row.appendChild(titleTrafficConditions);
-
-    // Print footer
-    const body = document.body;
-    body.appendChild(footer());
 
 };
 

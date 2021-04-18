@@ -1,5 +1,4 @@
 import { routes } from '../../core/router';
-import { footer } from '../../common/components/footer';
 
 // Print the Time
 const getImage = drone => {
@@ -80,7 +79,7 @@ const getDroneCard = drone => {
     typeAge.textContent = 'Age: ';
     link.href = routes.droneReports(drone.id);
 
-    // Print Children
+    // Prints Children
 
     description.appendChild(types);
     description.appendChild(details);
@@ -99,16 +98,12 @@ const getDroneCard = drone => {
     return cardContainer;
 };
 
-// Export each Drone Card
+// Exports each Drone Card
 export const addDroneCards = droneList => {
-    // Take each drone of the list and get the data in a card 
-    droneList.forEach(drone => {
-        const card = getDroneCard(drone);
-        const listElement = document.getElementById('drone-list');
-        listElement.appendChild(card);
-    });
 
-    // print the footer
-    const body = document.body;
-    body.appendChild(footer());
+    // Take each drone of the list and get the data in a card 
+    const card = getDroneCard(droneList);
+    const listElement = document.getElementById('drone-list');
+    listElement.appendChild(card);
+
 };

@@ -1,8 +1,9 @@
+import { history } from '../../core/router/history';
 import { getDronesReports } from './drone-report.api';
 import { getDrone } from '../drone-list/drone-list.api';
-import { history } from '../../core/router/history';
 import { mapDroneReportFromApiToVM } from './drone-report.mappers';
 import { setReportsValues, setDroneValues, setTitleRow } from './drone-report.components';
+import { footer } from '../../common/components/footer';
 
 // Reports Structure Declaration
 let reports = {
@@ -25,26 +26,26 @@ let rowCounter = 0;
 let rowGridCounter = 2;
 
 if (isId) { // Check errors with isId. If there is an id, continue. If not, go back to the Drone List
-    Promise.all([ // Get the promise data
-        getDronesReports(params.id), // Get the Drone Reports Data from data.json
-    ]).then(([droneReports]) => { // When we get the data, save it in droneReports
-        getDrone(params.id).then(myDrone => { // Get the Drone List
-            if (params.id == myDrone.id) { // If the Drone ID if equal to the ID from the history
-                const myDroneReports = getMyDroneReports(droneReports, myDrone.id); // Get the Data of the each Report of this Drone
-                reports = mapDroneReportFromApiToVM(myDroneReports); // Map each Report
+    getDronesReports(params.id) // Get the Drone Reports Data from data.json
+        .then((droneReports) => { // When we get the data, save it in droneReports
+            getDrone(params.id).then(myDrone => { // Get the Drone List
+                if (params.id == myDrone.id) { // If the Drone ID if equal to the ID from the history
+                    const myDroneReports = getMyDroneReports(droneReports, myDrone.id); // Get the Data of the each Report of this Drone
+                    reports = mapDroneReportFromApiToVM(myDroneReports); // Map each Report
 
-                setDroneValues(myDrone); // Print the Drone Details
-                setTitleRow(); // Print the Title Reports Row
+                    setDroneValues(myDrone); // Print the Drone Details
+                    setTitleRow(); // Print the Title Reports Row
 
-                return reports.map(report => { // Map the reports
-                    setReportsValues(report, rowCounter, rowGridCounter); // Get the Report values
-                    rowCounter++; // Add one to the counters
-                    rowGridCounter++;
-                });
-            }
+                    return reports.map(report => { // Map the reports
+                        setReportsValues(report, rowCounter, rowGridCounter); // Get the Report values
+                        rowCounter++; // Add one to the counters
+                        rowGridCounter++;
+                    });
+                }
+            });
+
         });
-
-    });
+    footer();
 } else {
     history.back(); // If not exists ID, go back to the Drone List
 }

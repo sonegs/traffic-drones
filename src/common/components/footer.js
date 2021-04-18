@@ -167,5 +167,5 @@ export const footer = () => {
     footer.appendChild(departments());
     footer.appendChild(copyright());
 
-    return footer;
+    document.body.appendChild(footer);
 };

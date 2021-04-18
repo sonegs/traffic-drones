@@ -1,14 +1,9 @@
-export const mapDroneListFromApiToViewModel = (droneList) => {
+export const mapDroneListFromApiToViewModel = droneList => {
     return droneList.map(droneObject => mapDroneFromApiToViewModel(droneObject));
 };
 
-// Map the Drones List Array
-const mapDroneFromApiToViewModel = (droneObject) => {
-    return droneObject.map(drone => mapDroneOneToOne(drone));
-};
-
 // Map the properties of the Drone
-const mapDroneOneToOne = (drone) => {
+const mapDroneFromApiToViewModel = drone => {
     return {
         id: drone.id,
         name: drone.name,
